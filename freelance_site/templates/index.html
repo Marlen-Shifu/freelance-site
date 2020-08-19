@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+	
+	
+
+	{% block content %}
+			<div class="sign_up">
+				<div class="sign_up_header">
+					<p class="sign_up_header_text">{{ title }}</p>
+				</div>
+
+				<div class="sign_up_content">
+					<div class="sign_up_content_shape">
+						<form method="POST" action="login/">
+							{% csrf_token %}
+							<div class="sign_up_content_block">
+								<input class="sign_up_text" placeholder="Логин" type="text" name="username" value="{{ next }}">
+									
+								</input>
+								<div class="sign_up_content_line"></div>
+							</div>
+							
+							<div class="sign_up_content_block">
+								<input class="sign_up_text" placeholder="Пароль" type="password" name="password">
+									
+								</input>
+								<div class="sign_up_content_line"></div>
+							</div>
+
+							<div class="sign_up_footer">
+								<button class="sign_up_footer_text" type="submit">Get Started</button>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				
+			</div>
+	{% endblock %}
+
+		<form method="POST" action="login/">
+			
+			<input type="text" name="username" value="{{ next }}"><br>
+			<input type="password" name="password"><br>
+			<input type="submit">
+		</form>
